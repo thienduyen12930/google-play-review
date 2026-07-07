@@ -8,7 +8,7 @@ async function main() {
 
         do {
             const result = await gplay.reviews({
-                appId: "com.pixelkraft.edgelighting",
+                appId: "com.edgelighting.lightingcolors.rgb.borderlight.livewallpaper",
                 lang: "en",
                 country: "us",
                 sort: gplay.sort.NEWEST,
@@ -31,7 +31,7 @@ async function main() {
         XLSX.utils.book_append_sheet(workbook, worksheet, "Reviews");
 
         // Ghi file Excel
-        XLSX.writeFile(workbook, "reviews_Edge_Lighting_Borderlight_ZipoApps.xlsx");
+        XLSX.writeFile(workbook, "reviews_Edge_Lighting_Color_wallpapers_DictionaryAndTranslator.xlsx");
 
         console.log("Done! File saved as reviews.xlsx");
     } catch (err) {
