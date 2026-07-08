@@ -1,4 +1,3 @@
-const XLSX = require("xlsx");
 const fs = require("fs");
 const { GoogleGenAI } = require("@google/genai");
 
@@ -24,13 +23,13 @@ async function generateWithRetry(prompt, maxRetry = 5) {
 
         } catch (err) {
 
-            if (err.status === 503 || err.status === 429) {
+            if (err.status === 429 || err.status === 503) {
 
                 console.log(
-                    `Gemini busy (${err.status}). Retry ${i}/${maxRetry}...`
+                    `Gemini busy (${err.status}) Retry ${i}/${maxRetry}`
                 );
 
-                await new Promise(resolve => setTimeout(resolve, 10000));
+                await new Promise(r => setTimeout(r, 10000));
 
             } else {
 
@@ -42,37 +41,42 @@ async function generateWithRetry(prompt, maxRetry = 5) {
 
     }
 
-    throw new Error("Gemini unavailable after multiple retries.");
+    throw new Error("Gemini unavailable.");
+
 }
 
-async function analyzeReview(excelFile, app) {
+async function analyzeReview(reviews, app) {
 
-    const workbook = XLSX.readFile(excelFile);
+    console.log("--------------------------------");
+    console.log("Preparing reviews...");
+    console.log("Total reviews:", reviews.length);
 
-    const sheet = workbook.Sheets["Reviews"];
-
-    const rows = XLSX.utils.sheet_to_json(sheet);
+    // Không gửi quá nhiều review
+    const selectedReviews = reviews.slice(0, 300);
 
     let reviewText = "";
 
-    rows.forEach(r => {
+    selectedReviews.forEach(r => {
 
         reviewText += `
-User: ${r.userName}
+Reviewer: ${r.userName || ""}
 
-Rating: ${r.score}
+Rating: ${r.score || ""}
 
-Helpful: ${r.thumbsUp || 0}
+Helpful Votes: ${r.thumbsUp || 0}
 
-Date: ${r.date}
+Review Date: ${r.date || ""}
 
 Review:
 ${r.text || ""}
 
------------------------------------
+--------------------------------------------------
+
 `;
 
     });
+
+    console.log("Review characters:", reviewText.length);
 
     const prompt = fs.readFileSync(
         "prompt.txt",
@@ -82,18 +86,37 @@ ${r.text || ""}
     const finalPrompt = prompt
         .replace(
             "[TÊN APP, mô tả ngắn 1-2 câu về app này làm gì]",
-            `${app.title}\n\n${app.summary}`
+            `${app.title}
+
+${app.summary}`
         )
         .replace(
             "[DÁN DỮ LIỆU REVIEW VÀO ĐÂY]",
             reviewText
         );
 
+    console.log("Prompt size:", finalPrompt.length);
+
+    // Lưu prompt để debug
+    fs.writeFileSync(
+        "debug_prompt.txt",
+        finalPrompt,
+        "utf8"
+    );
+
     console.log("Sending to Gemini...");
 
     const report = await generateWithRetry(finalPrompt);
 
+    // Lưu raw response để debug
+    fs.writeFileSync(
+        "gemini_response.txt",
+        report,
+        "utf8"
+    );
+
     return report;
+
 }
 
 module.exports = {

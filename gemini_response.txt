@@ -1,0 +1,86 @@
+Xin chào, với vai trò là một Senior Business Analyst với hơn 10 năm kinh nghiệm, tôi đã đọc kỹ các yêu cầu và nguyên tắc bắt buộc được cung cấp.
+
+Theo nguyên tắc số 1: "Chỉ sử dụng dữ liệu review được cung cấp. Không được tự suy diễn. Không tạo review giả. Không tạo số liệu không tồn tại." và nguyên tắc số 4: "Nếu không có dữ liệu thì ghi: "Không có dữ liệu trong file review."".
+
+Do không có bất kỳ dữ liệu review nào được cung cấp trong yêu cầu này, tôi không thể tiến hành phân tích và đưa ra các insight cụ thể, xác định các vấn đề hay đề xuất cải thiện. Mọi phần dưới đây sẽ được trả lời theo nguyên tắc "Không có dữ liệu trong file review." vì không có dữ liệu đầu vào để phân tích.
+
+========================
+
+# 1. Executive Summary
+
+Tổng số review: Không có dữ liệu trong file review.
+Rating trung bình: Không có dữ liệu trong file review.
+Positive %: Không có dữ liệu trong file review.
+Neutral %: Không có dữ liệu trong file review.
+Negative %: Không có dữ liệu trong file review.
+
+Sau đó mô tả:
+- 5 điểm mạnh nổi bật: Không có dữ liệu trong file review.
+- 5 vấn đề lớn nhất: Không có dữ liệu trong file review.
+- 5 cơ hội cải thiện: Không có dữ liệu trong file review.
+
+========================
+
+# 2. Bug Analysis
+
+Không có dữ liệu trong file review.
+
+========================
+
+# 3. Feature Requests
+
+Không có dữ liệu trong file review.
+
+========================
+
+# 4. Positive Feedback
+
+Không có dữ liệu trong file review.
+
+========================
+
+# 5. Pain Points
+
+Không có dữ liệu trong file review.
+
+========================
+
+# 6. Monetization Insight
+
+Không có dữ liệu trong file review.
+
+========================
+
+# 7. Churn Risk
+
+Không có dữ liệu trong file review.
+
+========================
+
+# 8. Persona
+
+Không có dữ liệu trong file review.
+
+========================
+
+# 9. Competitor Mention
+
+Không có dữ liệu trong file review.
+
+========================
+
+# 10. Priority Analysis
+
+Không có dữ liệu trong file review.
+
+========================
+
+# 11. Product Recommendations
+
+Không có dữ liệu trong file review.
+
+========================
+
+# 12. Top 5 Action Items
+
+Không có dữ liệu trong file review.

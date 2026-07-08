@@ -90,11 +90,11 @@ fs.mkdirSync(outputFolder, {
 
     console.log("Gemini analyzing...");
 
-    const report =
-        await analyzeReview(
-            excelPath,
-            app
-        );
+ const report =
+    await analyzeReview(
+        reviews,
+        app
+    );
 
 
 

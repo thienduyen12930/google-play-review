@@ -5,7 +5,9 @@ BỐI CẢNH
 ========================
 
 App:
-[TÊN APP, mô tả ngắn 1-2 câu về app này làm gì]
+Edge Lighting - LED Borders
+
+Light up your screen with stunning edge effects for calls and notifications.
 
 Mục tiêu:
 - Phân tích insight người dùng.
