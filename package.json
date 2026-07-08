@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/thienduyen12930/google-play-review#readme",
   "dependencies": {
+    "@google/genai": "^2.10.0",
+    "axios": "^1.18.1",
+    "docx": "^9.7.1",
+    "dotenv": "^17.4.2",
     "google-play-scraper": "^10.1.3",
     "json2csv": "^6.0.0-alpha.2",
     "xlsx": "^0.18.5"
